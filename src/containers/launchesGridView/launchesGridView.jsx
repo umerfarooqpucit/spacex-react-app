@@ -49,9 +49,8 @@ export default function LaunchesGridView() {
       sortable: false,
       disableColumnMenu: true,
       renderCell: (params) => (
-        <IconButton>
+        <IconButton onClick={() => navigate(`/launchDetail/${params.row.flightNumber}`)}>
           <RocketLaunchIcon
-            onClick={() => navigate(`/launchDetail/${params.row.flightNumber}`)}
           ></RocketLaunchIcon>
         </IconButton>
       ),
