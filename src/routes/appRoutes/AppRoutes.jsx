@@ -11,7 +11,7 @@ function AppRoutes() {
       <Routes>
         <Route path="/" element={<LandingView />} />
         <Route path="allLaunches" element={<LaunchesGridView />} />
-        <Route path="launchDetail" element={<LaunchDetailView />} />
+        <Route path="launchDetail/:id" element={<LaunchDetailView />} />
         <Route path="*" element={<LandingView />} />
       </Routes>
     </BrowserRouter>
