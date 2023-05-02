@@ -4,6 +4,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import { useParams, useNavigate } from "react-router-dom";
+import { Grid } from "@mui/material";
 import CircularProgress from "@mui/material/CircularProgress";
 import * as launchService from "../../services/launchService";
 import Container from "@mui/material/Container";
@@ -55,12 +56,25 @@ export default function LaunchDetailView() {
   return (
     <Container>
       <h2>Launch Details for Flight Number {id}</h2>
-      <Button onClick={() => navigate(`/allLaunches`)} variant="outlined" startIcon={<ArrowBack />}>
+      <Button
+        onClick={() => navigate(`/allLaunches`)}
+        variant="outlined"
+        startIcon={<ArrowBack />}
+      >
         All Launches
       </Button>
       <div style={{ height: 500, width: "100%" }}>
         {loading ? (
-          <CircularProgress />
+          <Grid
+            container
+            spacing={0}
+            direction="column"
+            alignItems="center"
+            justifyContent="center"
+            style={{ minHeight: "100vh" }}
+          >
+            <CircularProgress />
+          </Grid>
         ) : (
           <List>
             {Object.keys(launch).map((key, index) => (
