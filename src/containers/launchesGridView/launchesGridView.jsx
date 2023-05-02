@@ -112,6 +112,7 @@ export default function LaunchesGridView() {
           }}
           rows={launches}
           columns={columns}
+          disableRowSelectionOnClick={true}
           pageSizeOptions={[10, 20, 30]}
         />
       </div>
